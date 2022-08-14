@@ -96,11 +96,7 @@ function createChannels(g) {
             // check if user can access the channel
             let blocked = false;
             if (
-                !c.permissionsFor(g.me).has('VIEW_CHANNEL') ||
-                (bot.hideUnallowed &&
-                    !c
-                        .permissionsFor(g.members.cache.get(bot.owner.id))
-                        .has('VIEW_CHANNEL'))
+                !c.permissionsFor(g.me).has('VIEW_CHANNEL')
             ) {
                 blocked = true;
                 div.classList.add('blocked');

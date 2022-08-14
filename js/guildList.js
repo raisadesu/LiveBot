@@ -24,7 +24,7 @@ async function addGuilds() {
 
     await bot.guilds.cache
         .filter((g) =>
-            bot.hideUnallowed ? g.members.cache.get(bot.owner.id) : g
+            g
         )
         .forEach(async (g) => {
             // Check if the guild is available first, if it's not then remove it
